@@ -6,9 +6,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: CI/CD Automation
-    steps:
-      - uses: actions/checkout@v2
-      - name: Automation step 1
-        uses: .github/
-      - run: poetry run pytest
+    - name: Checkout (GitHub)
+      uses: actions/checkout@v2
+
+    - name: Build and run tests
+      uses: devcontainers/ci@v0.2
+      with:
+        runCmd: poetry run pytest
