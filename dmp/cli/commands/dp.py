@@ -1,7 +1,8 @@
+import json
+
 import click
 from dacite import from_dict
-import json
-import os
+
 import dmp.platform.dataproducts as dp
 
 
@@ -25,5 +26,5 @@ def create(spec):
 
 def read_specification(filename):
     with open(filename) as json_file:
-        specification = json.load(json_file)
-        return from_dict(data_class=dp.DataProductSpecification, data=specification)
+        spec = json.load(json_file)
+        return from_dict(data_class=dp.DataProductSpecification, data=spec)

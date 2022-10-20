@@ -1,5 +1,6 @@
-import click
 import os
+
+import click
 
 
 class DataMeshPlaftormCLI(click.MultiCommand):
@@ -17,7 +18,8 @@ class DataMeshPlaftormCLI(click.MultiCommand):
 
     def get_command(self, ctx, name):
         try:
-            module = __import__(f"dmp.cli.commands.{name}", None, None, ["cli"])
+            command_module = f"dmp.cli.commands.{name}"
+            module = __import__(command_module, None, None, ["cli"])
         except ImportError:
             return
         return module.cli
