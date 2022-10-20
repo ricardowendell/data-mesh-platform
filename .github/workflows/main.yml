@@ -5,11 +5,13 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    - name: Checkout (GitHub)
-      uses: actions/checkout@v2
+    steps:
+      runs-on: ubuntu-latest
 
-    - name: Build and run tests
-      uses: devcontainers/ci@v0.2
-      with:
-        runCmd: poetry run pytest
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v2
+
+      - name: Build and run tests
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: poetry run pytest
