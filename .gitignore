@@ -1,5 +1,9 @@
 **/.cache/*
 **/.venv/*
 **/__pycache__/*
+**/.pytest_cache/*
 dist/*
 .coverage
+.env/
+.terraform.lock.hcl
+**/.terraform/*

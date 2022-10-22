@@ -3,7 +3,7 @@ import json
 import click
 from dacite import from_dict
 
-import dmp.platform.dataproducts as dp
+import dmp.platform.dataproduct as dp
 
 
 @click.group()
